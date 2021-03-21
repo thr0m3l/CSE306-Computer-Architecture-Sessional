@@ -79,7 +79,6 @@
     <wire from="(600,790)" to="(620,790)"/>
     <wire from="(650,350)" to="(680,350)"/>
     <wire from="(170,560)" to="(170,670)"/>
-    <wire from="(170,200)" to="(190,200)"/>
     <wire from="(820,1090)" to="(890,1090)"/>
     <wire from="(800,440)" to="(810,440)"/>
     <wire from="(170,440)" to="(170,560)"/>
@@ -187,23 +186,11 @@
       <a name="inputs" val="2"/>
       <a name="label" val="Y2"/>
     </comp>
-    <comp lib="0" loc="(190,200)" name="Pin">
-      <a name="facing" val="south"/>
-      <a name="tristate" val="false"/>
-      <a name="label" val="CS1"/>
-      <a name="labelloc" val="north"/>
-    </comp>
     <comp lib="0" loc="(930,630)" name="Pin">
       <a name="facing" val="west"/>
       <a name="output" val="true"/>
       <a name="label" val="F1"/>
       <a name="labelloc" val="east"/>
-    </comp>
-    <comp lib="0" loc="(170,200)" name="Pin">
-      <a name="facing" val="south"/>
-      <a name="tristate" val="false"/>
-      <a name="label" val="CS2"/>
-      <a name="labelloc" val="north"/>
     </comp>
     <comp lib="1" loc="(730,880)" name="NOR Gate">
       <a name="size" val="30"/>
@@ -225,6 +212,12 @@
     <comp lib="1" loc="(650,800)" name="AND Gate">
       <a name="size" val="30"/>
       <a name="inputs" val="2"/>
+    </comp>
+    <comp lib="0" loc="(190,200)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="CS1"/>
+      <a name="labelloc" val="north"/>
     </comp>
     <comp lib="1" loc="(600,790)" name="XNOR Gate">
       <a name="size" val="30"/>
@@ -262,12 +255,6 @@
       <a name="size" val="30"/>
       <a name="inputs" val="2"/>
       <a name="label" val="X3"/>
-    </comp>
-    <comp lib="0" loc="(210,200)" name="Pin">
-      <a name="facing" val="south"/>
-      <a name="tristate" val="false"/>
-      <a name="label" val="CS0"/>
-      <a name="labelloc" val="north"/>
     </comp>
     <comp lib="1" loc="(800,540)" name="AND Gate">
       <a name="facing" val="south"/>
@@ -338,6 +325,12 @@
       <a name="size" val="30"/>
       <a name="inputs" val="2"/>
     </comp>
+    <comp lib="0" loc="(170,200)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="CS2"/>
+      <a name="labelloc" val="north"/>
+    </comp>
     <comp lib="3" loc="(820,420)" name="Adder">
       <a name="width" val="1"/>
     </comp>
@@ -363,6 +356,12 @@
       <a name="size" val="30"/>
       <a name="inputs" val="2"/>
       <a name="label" val="Y1"/>
+    </comp>
+    <comp lib="0" loc="(210,200)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="CS0"/>
+      <a name="labelloc" val="north"/>
     </comp>
     <comp lib="0" loc="(450,200)" name="Pin">
       <a name="facing" val="south"/>
