@@ -879,30 +879,23 @@
     <wire from="(410,280)" to="(410,290)"/>
     <wire from="(420,280)" to="(420,290)"/>
     <wire from="(460,280)" to="(460,290)"/>
+    <wire from="(450,390)" to="(450,400)"/>
+    <wire from="(500,280)" to="(500,290)"/>
     <wire from="(490,280)" to="(490,290)"/>
     <wire from="(480,280)" to="(480,290)"/>
     <wire from="(470,280)" to="(470,290)"/>
-    <wire from="(500,280)" to="(500,290)"/>
-    <wire from="(450,390)" to="(450,400)"/>
     <wire from="(340,230)" to="(340,240)"/>
     <wire from="(560,320)" to="(600,320)"/>
     <wire from="(410,240)" to="(410,260)"/>
-    <wire from="(450,350)" to="(450,370)"/>
-    <wire from="(440,350)" to="(440,370)"/>
-    <wire from="(430,350)" to="(430,370)"/>
-    <wire from="(460,350)" to="(460,370)"/>
-    <wire from="(510,340)" to="(600,340)"/>
+    <wire from="(450,340)" to="(450,370)"/>
+    <wire from="(440,340)" to="(440,370)"/>
+    <wire from="(430,340)" to="(430,370)"/>
+    <wire from="(460,340)" to="(460,370)"/>
     <wire from="(510,300)" to="(540,300)"/>
     <wire from="(510,310)" to="(540,310)"/>
     <wire from="(510,320)" to="(540,320)"/>
     <wire from="(510,330)" to="(540,330)"/>
     <wire from="(340,240)" to="(410,240)"/>
-    <comp lib="0" loc="(450,260)" name="Splitter">
-      <a name="facing" val="south"/>
-      <a name="fanout" val="4"/>
-      <a name="incoming" val="4"/>
-      <a name="appear" val="center"/>
-    </comp>
     <comp lib="0" loc="(450,390)" name="Splitter">
       <a name="facing" val="north"/>
       <a name="fanout" val="4"/>
@@ -930,12 +923,6 @@
       <a name="label" val="F"/>
       <a name="labelloc" val="east"/>
     </comp>
-    <comp lib="0" loc="(600,340)" name="Pin">
-      <a name="facing" val="west"/>
-      <a name="output" val="true"/>
-      <a name="label" val="Cout"/>
-      <a name="labelloc" val="east"/>
-    </comp>
     <comp lib="0" loc="(490,260)" name="Splitter">
       <a name="facing" val="south"/>
       <a name="fanout" val="4"/>
@@ -950,22 +937,25 @@
       <a name="label" val="VZSC"/>
       <a name="labelloc" val="south"/>
     </comp>
-    <comp lib="0" loc="(490,190)" name="Pin">
-      <a name="facing" val="south"/>
-      <a name="width" val="4"/>
-      <a name="tristate" val="false"/>
-      <a name="label" val="A"/>
-      <a name="labelloc" val="north"/>
-    </comp>
-    <comp loc="(510,300)" name="4 bit ALU">
-      <a name="label" val="4 bit ALU"/>
-      <a name="labelloc" val="west"/>
-    </comp>
     <comp lib="0" loc="(340,230)" name="Pin">
       <a name="facing" val="south"/>
       <a name="width" val="3"/>
       <a name="tristate" val="false"/>
       <a name="label" val="CS"/>
+      <a name="labelloc" val="north"/>
+    </comp>
+    <comp loc="(510,300)" name="4 bit ALU"/>
+    <comp lib="0" loc="(450,260)" name="Splitter">
+      <a name="facing" val="south"/>
+      <a name="fanout" val="4"/>
+      <a name="incoming" val="4"/>
+      <a name="appear" val="center"/>
+    </comp>
+    <comp lib="0" loc="(490,190)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="width" val="4"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="A"/>
       <a name="labelloc" val="north"/>
     </comp>
     <comp lib="0" loc="(560,320)" name="Splitter">
