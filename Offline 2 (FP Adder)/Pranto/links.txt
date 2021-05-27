@@ -1,0 +1,11 @@
+> For converting decimal FP numbers to IEEE-754 FP:
+
+https://www.h-schmidt.net/FloatConverter/IEEE754.html
+
+Notes: 
+1. Add 7 to the unbiased exponent (instead of 127 like in the website)
+2. Truncate the fraction after 11 bits, checked means 1, unchecked means 0
+
+> For some info on FP numbers:
+
+https://0.30000000000000004.com/

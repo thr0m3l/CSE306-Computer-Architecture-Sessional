@@ -1,0 +1,2 @@
+what to do when output is 0? set underflow flag?
+gives wrong output if the exponent difference is more than 12, because then the fraction becomes 0 after left shifting
