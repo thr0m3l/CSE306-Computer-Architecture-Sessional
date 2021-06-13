@@ -9,30 +9,30 @@ map<string,string> registers;
 
 void initialize()
 {
-    opcode.insert(pair<string,string>("sll","0"));
-    opcode.insert(pair<string,string>("bneq","1"));
-    opcode.insert(pair<string,string>("beq","2"));
-    opcode.insert(pair<string,string>("ori","3"));
-    opcode.insert(pair<string,string>("add","4"));
-    opcode.insert(pair<string,string>("nor","5"));
-    opcode.insert(pair<string,string>("and","6"));
-    opcode.insert(pair<string,string>("addi","7"));
-    opcode.insert(pair<string,string>("subi","8"));
-    opcode.insert(pair<string,string>("sw","9"));
-    opcode.insert(pair<string,string>("lw","a"));
-    opcode.insert(pair<string,string>("andi","b"));
-    opcode.insert(pair<string,string>("j","c"));
-    opcode.insert(pair<string,string>("sub","d"));
-    opcode.insert(pair<string,string>("srl","e"));
-    opcode.insert(pair<string,string>("or","f"));
+    opcode.insert({"sll","0"});
+    opcode.insert({"bneq","1"});
+    opcode.insert({"beq","2"});
+    opcode.insert({"ori","3"});
+    opcode.insert({"add","4"});
+    opcode.insert({"nor","5"});
+    opcode.insert({"and","6"});
+    opcode.insert({"addi","7"});
+    opcode.insert({"subi","8"});
+    opcode.insert({"sw","9"});
+    opcode.insert({"lw","a"});
+    opcode.insert({"andi","b"});
+    opcode.insert({"j","c"});
+    opcode.insert({"sub","d"});
+    opcode.insert({"srl","e"});
+    opcode.insert({"or","f"});
 
-    registers.insert(pair<string,string>("$zero","0"));
-    registers.insert(pair<string,string>("$t0","1"));
-    registers.insert(pair<string,string>("$t1","2"));
-    registers.insert(pair<string,string>("$t2","3"));
-    registers.insert(pair<string,string>("$t3","4"));
-    registers.insert(pair<string,string>("$t4","5"));
-    registers.insert(pair<string,string>("$sp","6"));
+    registers.insert({"$zero","0"});
+    registers.insert({"$t0","1"});
+    registers.insert({"$t1","2"});
+    registers.insert({"$t2","3"});
+    registers.insert({"$t3","4"});
+    registers.insert({"$t4","5"});
+    registers.insert({"$sp","6"});
 }
 
 string makehex(string s)
