@@ -71,6 +71,7 @@ int main() {
     test.close();
     ifstream test1 ("test.txt");
     ofstream codefile("machine_code.txt");
+    codefile<<"v2.0 raw"<<endl;
 
     while( getline(test1 ,line)) {
 
