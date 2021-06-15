@@ -2,8 +2,8 @@
 using namespace std;
 ///sequence IONHAKEBDLMFPCJG
 int ins_cnt = 0; ///to count number of instructions that each label points to in first iteration
-int ln_cnt = 0;
-int is_rtype =0;///to count line numbers in second iteration
+int ln_cnt = 0; ///to count instruction numbers in second iteration
+int is_rtype =0;
 map<string,string> opcode;
 map<string,string> registers;
 
