@@ -65,8 +65,20 @@ int main() {
             labels.insert(pair<string,int>(label, ins_cnt));
         }
         else if(line!="")
-            ins_cnt++;
+        {
+            if(line.substr(0,4)=="push"||line.substr(0,3)=="pop")
+            {
+                //cout<<line<<endl;
+                ins_cnt+=2;
+            }
+            else ins_cnt++;
+        }
+
     }
+
+    cout<<ins_cnt<<endl;
+
+    line.clear();
 
     test.close();
     ifstream test1 ("test.txt");
@@ -98,7 +110,7 @@ int main() {
                 codefile<<code<<endl;
             }
 
-            if(inst[0]=="sll"||inst[0]=="srl")
+            else if(inst[0]=="sll"||inst[0]=="srl")
             {
                 is_rtype =1;
                 ln_cnt++;
@@ -111,7 +123,7 @@ int main() {
                 is_rtype =0;
             }
 
-            if(inst[0]=="addi"||inst[0]=="subi"||inst[0]=="andi"||inst[0]=="ori"||inst[0]=="nori")
+            else if(inst[0]=="addi"||inst[0]=="subi"||inst[0]=="andi"||inst[0]=="ori"||inst[0]=="nori")
             {
                 ln_cnt++;
                 inst[1] = inst[1].substr(0,inst[1].size()-1);
@@ -122,7 +134,7 @@ int main() {
                 codefile<<code<<endl;
             }
 
-            if(inst[0]=="lw"||inst[0]=="sw")
+            else if(inst[0]=="lw"||inst[0]=="sw")
             {
                 ln_cnt++;
                 inst[1] = inst[1].substr(0,inst[1].size()-1);
@@ -136,7 +148,7 @@ int main() {
                 codefile<<code<<endl;
             }
 
-            if(inst[0]=="j")
+            else if(inst[0]=="j")
             {
                 ln_cnt++;
 
@@ -145,7 +157,7 @@ int main() {
                 codefile<<code<<endl;
             }
 
-            if(inst[0]=="beq"||inst[0]=="bneq")
+            else if(inst[0]=="beq"||inst[0]=="bneq")
             {
                 ln_cnt++;
                 inst[1] = inst[1].substr(0,inst[1].size()-1);
@@ -154,8 +166,28 @@ int main() {
                 int offset = labels[inst[3]]-ln_cnt-1;
 
                 code = opcode[inst[0]]+registers[inst[2]]+registers[inst[1]]+ makehex(to_string(offset));
-                cout<<ln_cnt<<" "<<offset<<endl;
-                cout<<code<<endl;
+                //cout<<ln_cnt<<" "<<offset<<endl;
+                //cout<<code<<endl;
+                codefile<<code<<endl;
+            }
+
+            else if(inst[0]=="push")
+            {
+                ln_cnt+=2;
+
+                code = opcode["sw"]+registers["$sp"]+registers[inst[1]]+makehex("0");
+                codefile<<code<<endl;
+                code = opcode["subi"]+registers["$sp"]+registers["$sp"]+ makehex("1");
+                codefile<<code<<endl;
+            }
+
+            else if(inst[0]=="pop")
+            {
+                ln_cnt+=2;
+
+                code = opcode["lw"]+registers["$sp"]+registers[inst[1]]+makehex("0");
+                codefile<<code<<endl;
+                code = opcode["addi"]+registers["$sp"]+registers["$sp"]+ makehex("1");
                 codefile<<code<<endl;
             }
 

@@ -15,6 +15,10 @@ ori $t1, $t2, -10
 sw $t1, -4($t2)
 lw $t2, 10($t4)
 
+extra:
+push $t1
+pop $t2
+
 Control:
 beq $t1, $t2, Jtype
 bneq $t3, $t0, Itype
