@@ -32,7 +32,8 @@ void initialize()
     registers.insert({"$t2","3"});
     registers.insert({"$t3","4"});
     registers.insert({"$t4","5"});
-    registers.insert({"$sp","6"});
+    registers.insert({"$t5","6"});
+    registers.insert({"$sp","7"});
 }
 
 string makehex(string s)
@@ -69,7 +70,8 @@ int main() {
             if(line.substr(0,4)=="push"||line.substr(0,3)=="pop")
             {
                 //cout<<line<<endl;
-                ins_cnt+=2;
+                if(line[line.size()-1]==')') ins_cnt+=3;
+                else ins_cnt+=2;
             }
             else ins_cnt++;
         }
@@ -173,12 +175,37 @@ int main() {
 
             else if(inst[0]=="push")
             {
-                ln_cnt+=2;
+                if(inst[1][inst[1].size()-1]==')')
+                {
+                    ln_cnt+=3;
 
-                code = opcode["sw"]+registers["$sp"]+registers[inst[1]]+makehex("0");
-                codefile<<code<<endl;
-                code = opcode["subi"]+registers["$sp"]+registers["$sp"]+ makehex("1");
-                codefile<<code<<endl;
+                    inst[1] = inst[1].substr(0,inst[1].size()-1);
+
+                    string offset = inst[1].substr(0,inst[1].find('('));
+                    string reg = inst[1].substr(inst[1].find('(')+1,inst[1].size());
+
+                    //cout<<offset<<" "<<reg<<endl;
+
+                    code = opcode["addi"]+registers["$t5"]+registers[reg]+makehex(offset);
+                    //cout<<code<<endl;
+                    codefile<<code<<endl;
+                    code = opcode["sw"]+registers["$sp"]+registers["$t5"]+makehex("0");
+                    //cout<<code<<endl;
+                    codefile<<code<<endl;
+                    code = opcode["subi"]+registers["$sp"]+registers["$sp"]+ makehex("1");
+                    //cout<<code<<endl;
+                    codefile<<code<<endl;
+
+                }
+                else
+                {
+                    ln_cnt+=2;
+
+                    code = opcode["sw"]+registers["$sp"]+registers[inst[1]]+makehex("0");
+                    codefile<<code<<endl;
+                    code = opcode["subi"]+registers["$sp"]+registers["$sp"]+ makehex("1");
+                    codefile<<code<<endl;
+                }
             }
 
             else if(inst[0]=="pop")

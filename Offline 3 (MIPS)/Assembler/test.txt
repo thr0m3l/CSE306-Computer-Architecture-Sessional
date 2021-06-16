@@ -17,6 +17,7 @@ lw $t2, 10($t4)
 
 extra:
 push $t1
+push 3($t1)
 pop $t2
 
 Control:
