@@ -1,4 +1,4 @@
-RegDst ALUSrc MemToReg RegWrite MemRead MemWrite Branch ALUOp2 ALUOp1 AlUOp0
+RegDst ALUSrc RegWrite MemRead MemWrite Branch Beqone Jump ALUOp2 ALUOp1 AlUOp0
 
 1001 000 101
 0000 001 001
