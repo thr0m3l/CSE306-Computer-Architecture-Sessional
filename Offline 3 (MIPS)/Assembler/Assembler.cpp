@@ -84,6 +84,7 @@ int main() {
     ifstream test1 ("test.txt");
     ofstream codefile("machine_code.txt");
     codefile<<"v2.0 raw"<<endl;
+	codefile<<"777ff"<<endl;
 
     while( getline(test1 ,line)) {
 
