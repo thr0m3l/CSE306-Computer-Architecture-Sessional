@@ -55,7 +55,7 @@ int main() {
     initialize();
     string line = "",label;
     map<string,int> labels;
-    ifstream test ("test.txt");
+    ifstream test ("testcase2.txt");
 
     while(getline(test,line))
     {
@@ -83,10 +83,10 @@ int main() {
     line.clear();
 
     test.close();
-    ifstream test1 ("test.txt");
-    ofstream codefile("machine_code.txt");
+    ifstream test1 ("testcase2.txt");
+    ofstream codefile("machine_code2.txt");
     codefile<<"v2.0 raw"<<endl;
-	codefile<<777ff<<endl;
+	codefile<<"777ff"<<endl;
 
     while( getline(test1 ,line)) {
 
