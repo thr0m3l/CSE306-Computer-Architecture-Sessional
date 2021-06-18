@@ -91,7 +91,7 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
     <wire from="(420,330)" to="(580,330)"/>
     <wire from="(650,510)" to="(680,510)"/>
     <wire from="(300,170)" to="(320,170)"/>
-    <wire from="(520,590)" to="(1060,590)"/>
+    <wire from="(520,590)" to="(680,590)"/>
     <wire from="(80,510)" to="(100,510)"/>
     <wire from="(650,360)" to="(650,460)"/>
     <wire from="(310,290)" to="(310,470)"/>
@@ -147,7 +147,6 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
     <wire from="(970,460)" to="(970,560)"/>
     <wire from="(80,270)" to="(80,510)"/>
     <wire from="(380,400)" to="(380,460)"/>
-    <wire from="(600,560)" to="(680,560)"/>
     <wire from="(20,470)" to="(90,470)"/>
     <wire from="(390,410)" to="(390,470)"/>
     <wire from="(570,470)" to="(580,470)"/>
@@ -158,6 +157,7 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
     <wire from="(820,90)" to="(820,100)"/>
     <wire from="(1060,100)" to="(1100,100)"/>
     <wire from="(330,400)" to="(380,400)"/>
+    <wire from="(680,590)" to="(1060,590)"/>
     <wire from="(100,490)" to="(100,510)"/>
     <wire from="(900,520)" to="(900,610)"/>
     <wire from="(420,330)" to="(420,360)"/>
@@ -177,6 +177,7 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
     <wire from="(700,220)" to="(700,490)"/>
     <wire from="(770,90)" to="(820,90)"/>
     <wire from="(860,100)" to="(860,110)"/>
+    <wire from="(680,590)" to="(680,660)"/>
     <wire from="(360,480)" to="(360,490)"/>
     <wire from="(580,270)" to="(810,270)"/>
     <wire from="(750,480)" to="(790,480)"/>
@@ -213,7 +214,6 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
     <wire from="(510,460)" to="(540,460)"/>
     <wire from="(340,450)" to="(370,450)"/>
     <wire from="(590,500)" to="(590,660)"/>
-    <wire from="(680,560)" to="(680,660)"/>
     <wire from="(1010,410)" to="(1080,410)"/>
     <wire from="(860,100)" to="(930,100)"/>
     <wire from="(900,290)" to="(980,290)"/>
@@ -229,6 +229,7 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
     <wire from="(890,80)" to="(930,80)"/>
     <wire from="(580,230)" to="(690,230)"/>
     <wire from="(790,480)" to="(790,560)"/>
+    <wire from="(600,560)" to="(770,560)"/>
     <wire from="(790,480)" to="(810,480)"/>
     <wire from="(270,40)" to="(1000,40)"/>
     <wire from="(520,450)" to="(540,450)"/>
@@ -268,7 +269,6 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
     <wire from="(340,480)" to="(360,480)"/>
     <wire from="(150,330)" to="(150,690)"/>
     <wire from="(970,460)" to="(1000,460)"/>
-    <wire from="(680,560)" to="(770,560)"/>
     <wire from="(400,390)" to="(410,390)"/>
     <wire from="(130,100)" to="(210,100)"/>
     <wire from="(340,490)" to="(350,490)"/>
@@ -277,158 +277,54 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
     <wire from="(470,520)" to="(600,520)"/>
     <wire from="(350,200)" to="(350,390)"/>
     <wire from="(60,390)" to="(60,580)"/>
-    <comp lib="4" loc="(300,470)" name="ROM">
-      <a name="dataWidth" val="20"/>
-      <a name="contents">addr/data: 8 20
-71110 71100 72201 72200 41230 73300 83304 73300
-84409 74400 d3450 75500 b11bb 71100 61230 73300
-34467 74400 f4510 71100 52220 72200 113 71100
-e0222 72200 92400 a2300 73300 21204 21303 11103
-12204 c0c00
-</a>
-    </comp>
-    <comp lib="6" loc="(271,275)" name="Text"/>
-    <comp lib="0" loc="(310,650)" name="Bit Extender">
-      <a name="in_width" val="4"/>
-      <a name="out_width" val="8"/>
-    </comp>
-    <comp lib="0" loc="(260,290)" name="Pin">
-      <a name="output" val="true"/>
-      <a name="width" val="20"/>
-      <a name="labelloc" val="east"/>
-    </comp>
-    <comp lib="4" loc="(950,480)" name="RAM">
-      <a name="bus" val="separate"/>
-    </comp>
-    <comp lib="6" loc="(536,356)" name="Text">
-      <a name="text" val="RegDst"/>
-      <a name="font" val="SansSerif bold 12"/>
-    </comp>
-    <comp lib="7" loc="(570,460)" name="Register File"/>
-    <comp lib="6" loc="(433,180)" name="Text"/>
-    <comp lib="4" loc="(540,270)" name="ROM">
-      <a name="addrWidth" val="4"/>
-      <a name="dataWidth" val="12"/>
-      <a name="contents">addr/data: 4 12
-f05 31 21 302 500 504 503 300
-301 240 380 303 f 501 f06 502
-</a>
-    </comp>
-    <comp lib="8" loc="(750,470)" name="ALU">
-      <a name="labelloc" val="east"/>
-      <a name="labelfont" val="SansSerif bold 12"/>
-    </comp>
-    <comp lib="2" loc="(1030,470)" name="Multiplexer">
-      <a name="selloc" val="tr"/>
-      <a name="width" val="8"/>
-      <a name="enable" val="false"/>
-    </comp>
-    <comp lib="3" loc="(860,100)" name="Adder"/>
-    <comp lib="0" loc="(680,660)" name="Pin">
-      <a name="facing" val="north"/>
-      <a name="output" val="true"/>
-      <a name="width" val="8"/>
-      <a name="labelloc" val="east"/>
-    </comp>
-    <comp lib="6" loc="(629,214)" name="Text">
-      <a name="text" val="ALUOp"/>
-      <a name="font" val="SansSerif bold 12"/>
-    </comp>
+    <comp lib="6" loc="(632,210)" name="Text"/>
     <comp lib="1" loc="(890,210)" name="AND Gate">
       <a name="facing" val="north"/>
       <a name="size" val="30"/>
       <a name="inputs" val="2"/>
     </comp>
+    <comp lib="6" loc="(629,214)" name="Text">
+      <a name="text" val="ALUOp"/>
+      <a name="font" val="SansSerif bold 12"/>
+    </comp>
     <comp lib="6" loc="(450,194)" name="Text">
       <a name="text" val="RegWrite"/>
       <a name="font" val="SansSerif bold 12"/>
-    </comp>
-    <comp lib="2" loc="(400,640)" name="Multiplexer">
-      <a name="width" val="8"/>
-      <a name="enable" val="false"/>
-    </comp>
-    <comp lib="4" loc="(120,470)" name="Register"/>
-    <comp lib="6" loc="(648,214)" name="Text"/>
-    <comp lib="3" loc="(250,90)" name="Adder"/>
-    <comp lib="2" loc="(1060,100)" name="Multiplexer">
-      <a name="width" val="8"/>
-      <a name="enable" val="false"/>
-    </comp>
-    <comp lib="0" loc="(590,660)" name="Pin">
-      <a name="facing" val="north"/>
-      <a name="output" val="true"/>
-      <a name="width" val="8"/>
-      <a name="labelloc" val="east"/>
-    </comp>
-    <comp lib="6" loc="(165,309)" name="Text"/>
-    <comp lib="2" loc="(940,150)" name="Multiplexer">
-      <a name="facing" val="north"/>
-      <a name="enable" val="false"/>
-    </comp>
-    <comp lib="0" loc="(410,520)" name="Splitter">
-      <a name="facing" val="west"/>
-      <a name="incoming" val="8"/>
-      <a name="appear" val="center"/>
-      <a name="bit0" val="1"/>
-      <a name="bit2" val="1"/>
-      <a name="bit3" val="1"/>
-      <a name="bit4" val="0"/>
-      <a name="bit5" val="0"/>
-      <a name="bit6" val="0"/>
-      <a name="bit7" val="0"/>
-    </comp>
-    <comp lib="6" loc="(465,344)" name="Text">
-      <a name="text" val="Shift"/>
-      <a name="font" val="SansSerif bold 12"/>
-    </comp>
-    <comp lib="2" loc="(650,510)" name="Multiplexer">
-      <a name="selloc" val="tr"/>
-      <a name="width" val="8"/>
-      <a name="enable" val="false"/>
-    </comp>
-    <comp lib="1" loc="(980,250)" name="NOT Gate">
-      <a name="facing" val="north"/>
-    </comp>
-    <comp lib="6" loc="(910,374)" name="Text">
-      <a name="text" val="MemWrite"/>
-      <a name="font" val="SansSerif bold 12"/>
-    </comp>
-    <comp lib="0" loc="(280,190)" name="Splitter">
-      <a name="incoming" val="8"/>
-      <a name="bit1" val="0"/>
-      <a name="bit2" val="0"/>
-      <a name="bit3" val="0"/>
-      <a name="bit4" val="1"/>
-      <a name="bit5" val="1"/>
-      <a name="bit6" val="1"/>
-      <a name="bit7" val="1"/>
-    </comp>
-    <comp lib="2" loc="(960,90)" name="Multiplexer">
-      <a name="width" val="8"/>
-      <a name="enable" val="false"/>
-    </comp>
-    <comp lib="6" loc="(825,244)" name="Text">
-      <a name="text" val="Branch"/>
-      <a name="font" val="SansSerif bold 12"/>
-    </comp>
-    <comp lib="0" loc="(580,150)" name="Pin">
-      <a name="facing" val="west"/>
-      <a name="output" val="true"/>
-      <a name="width" val="12"/>
-      <a name="labelloc" val="east"/>
-    </comp>
-    <comp lib="6" loc="(726,136)" name="Text">
-      <a name="text" val="Jump"/>
-      <a name="font" val="SansSerif bold 12"/>
-    </comp>
-    <comp lib="0" loc="(50,270)" name="Clock"/>
-    <comp lib="0" loc="(160,80)" name="Constant">
-      <a name="width" val="8"/>
     </comp>
     <comp lib="6" loc="(571,383)" name="Text">
       <a name="text" val="ALUSrc"/>
       <a name="font" val="SansSerif bold 12"/>
     </comp>
+    <comp lib="4" loc="(120,470)" name="Register"/>
+    <comp lib="2" loc="(460,480)" name="Multiplexer">
+      <a name="selloc" val="tr"/>
+      <a name="width" val="4"/>
+      <a name="enable" val="false"/>
+    </comp>
+    <comp lib="0" loc="(160,80)" name="Constant">
+      <a name="width" val="8"/>
+    </comp>
+    <comp lib="8" loc="(750,470)" name="ALU">
+      <a name="labelloc" val="east"/>
+      <a name="labelfont" val="SansSerif bold 12"/>
+    </comp>
+    <comp lib="4" loc="(300,470)" name="ROM">
+      <a name="dataWidth" val="20"/>
+      <a name="contents">addr/data: 8 20
+777ff 711c8 72264 221fd 221 12101 221fd 744f6
+755fa 44530 73300 c0400
+</a>
+    </comp>
+    <comp lib="0" loc="(310,650)" name="Bit Extender">
+      <a name="in_width" val="4"/>
+      <a name="out_width" val="8"/>
+    </comp>
+    <comp lib="6" loc="(165,309)" name="Text"/>
+    <comp lib="6" loc="(909,405)" name="Text">
+      <a name="text" val="MemRead"/>
+      <a name="font" val="SansSerif bold 12"/>
+    </comp>
+    <comp lib="6" loc="(648,214)" name="Text"/>
     <comp lib="0" loc="(320,470)" name="Splitter">
       <a name="fanout" val="5"/>
       <a name="incoming" val="20"/>
@@ -454,34 +350,107 @@ f05 31 21 302 500 504 503 300
       <a name="bit18" val="0"/>
       <a name="bit19" val="0"/>
     </comp>
-    <comp lib="6" loc="(909,405)" name="Text">
-      <a name="text" val="MemRead"/>
+    <comp lib="6" loc="(536,356)" name="Text">
+      <a name="text" val="RegDst"/>
       <a name="font" val="SansSerif bold 12"/>
+    </comp>
+    <comp lib="0" loc="(680,660)" name="Pin">
+      <a name="facing" val="north"/>
+      <a name="output" val="true"/>
+      <a name="width" val="8"/>
+      <a name="labelloc" val="east"/>
+    </comp>
+    <comp lib="6" loc="(271,275)" name="Text"/>
+    <comp lib="0" loc="(50,270)" name="Clock"/>
+    <comp lib="1" loc="(980,250)" name="NOT Gate">
+      <a name="facing" val="north"/>
+    </comp>
+    <comp lib="2" loc="(650,510)" name="Multiplexer">
+      <a name="selloc" val="tr"/>
+      <a name="width" val="8"/>
+      <a name="enable" val="false"/>
+    </comp>
+    <comp lib="2" loc="(400,640)" name="Multiplexer">
+      <a name="width" val="8"/>
+      <a name="enable" val="false"/>
+    </comp>
+    <comp lib="3" loc="(250,90)" name="Adder"/>
+    <comp lib="6" loc="(910,374)" name="Text">
+      <a name="text" val="MemWrite"/>
+      <a name="font" val="SansSerif bold 12"/>
+    </comp>
+    <comp lib="0" loc="(580,150)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="width" val="12"/>
+      <a name="labelloc" val="east"/>
+    </comp>
+    <comp lib="3" loc="(860,100)" name="Adder"/>
+    <comp lib="2" loc="(960,90)" name="Multiplexer">
+      <a name="width" val="8"/>
+      <a name="enable" val="false"/>
+    </comp>
+    <comp lib="0" loc="(280,190)" name="Splitter">
+      <a name="incoming" val="8"/>
+      <a name="bit1" val="0"/>
+      <a name="bit2" val="0"/>
+      <a name="bit3" val="0"/>
+      <a name="bit4" val="1"/>
+      <a name="bit5" val="1"/>
+      <a name="bit6" val="1"/>
+      <a name="bit7" val="1"/>
+    </comp>
+    <comp lib="2" loc="(440,380)" name="Multiplexer">
+      <a name="selloc" val="tr"/>
+      <a name="width" val="4"/>
+      <a name="enable" val="false"/>
+    </comp>
+    <comp lib="6" loc="(726,136)" name="Text">
+      <a name="text" val="Jump"/>
+      <a name="font" val="SansSerif bold 12"/>
+    </comp>
+    <comp lib="4" loc="(950,480)" name="RAM">
+      <a name="bus" val="separate"/>
+    </comp>
+    <comp lib="6" loc="(433,180)" name="Text"/>
+    <comp lib="1" loc="(970,210)" name="AND Gate">
+      <a name="facing" val="north"/>
+      <a name="size" val="30"/>
+      <a name="inputs" val="2"/>
+    </comp>
+    <comp lib="2" loc="(940,150)" name="Multiplexer">
+      <a name="facing" val="north"/>
+      <a name="enable" val="false"/>
+    </comp>
+    <comp lib="0" loc="(590,660)" name="Pin">
+      <a name="facing" val="north"/>
+      <a name="output" val="true"/>
+      <a name="width" val="8"/>
+      <a name="labelloc" val="east"/>
+    </comp>
+    <comp lib="7" loc="(570,460)" name="Register File"/>
+    <comp lib="6" loc="(900,333)" name="Text">
+      <a name="text" val="MemToReg"/>
+      <a name="font" val="SansSerif bold 12"/>
+    </comp>
+    <comp lib="2" loc="(1030,470)" name="Multiplexer">
+      <a name="selloc" val="tr"/>
+      <a name="width" val="8"/>
+      <a name="enable" val="false"/>
     </comp>
     <comp lib="6" loc="(823,184)" name="Text">
       <a name="text" val="Beqone"/>
       <a name="font" val="SansSerif bold 12"/>
+    </comp>
+    <comp lib="2" loc="(1060,100)" name="Multiplexer">
+      <a name="width" val="8"/>
+      <a name="enable" val="false"/>
     </comp>
     <comp lib="0" loc="(650,360)" name="Pin">
       <a name="facing" val="south"/>
       <a name="output" val="true"/>
       <a name="width" val="8"/>
       <a name="labelloc" val="east"/>
-    </comp>
-    <comp lib="1" loc="(970,210)" name="AND Gate">
-      <a name="facing" val="north"/>
-      <a name="size" val="30"/>
-      <a name="inputs" val="2"/>
-    </comp>
-    <comp lib="2" loc="(460,480)" name="Multiplexer">
-      <a name="selloc" val="tr"/>
-      <a name="width" val="4"/>
-      <a name="enable" val="false"/>
-    </comp>
-    <comp lib="6" loc="(632,210)" name="Text"/>
-    <comp lib="6" loc="(900,333)" name="Text">
-      <a name="text" val="MemToReg"/>
-      <a name="font" val="SansSerif bold 12"/>
     </comp>
     <comp lib="0" loc="(560,270)" name="Splitter">
       <a name="fanout" val="10"/>
@@ -499,10 +468,38 @@ f05 31 21 302 500 504 503 300
       <a name="bit10" val="8"/>
       <a name="bit11" val="9"/>
     </comp>
-    <comp lib="2" loc="(440,380)" name="Multiplexer">
-      <a name="selloc" val="tr"/>
-      <a name="width" val="4"/>
-      <a name="enable" val="false"/>
+    <comp lib="6" loc="(465,344)" name="Text">
+      <a name="text" val="Shift"/>
+      <a name="font" val="SansSerif bold 12"/>
+    </comp>
+    <comp lib="6" loc="(825,244)" name="Text">
+      <a name="text" val="Branch"/>
+      <a name="font" val="SansSerif bold 12"/>
+    </comp>
+    <comp lib="0" loc="(260,290)" name="Pin">
+      <a name="output" val="true"/>
+      <a name="width" val="20"/>
+      <a name="labelloc" val="east"/>
+    </comp>
+    <comp lib="0" loc="(410,520)" name="Splitter">
+      <a name="facing" val="west"/>
+      <a name="incoming" val="8"/>
+      <a name="appear" val="center"/>
+      <a name="bit0" val="1"/>
+      <a name="bit2" val="1"/>
+      <a name="bit3" val="1"/>
+      <a name="bit4" val="0"/>
+      <a name="bit5" val="0"/>
+      <a name="bit6" val="0"/>
+      <a name="bit7" val="0"/>
+    </comp>
+    <comp lib="4" loc="(540,270)" name="ROM">
+      <a name="addrWidth" val="4"/>
+      <a name="dataWidth" val="12"/>
+      <a name="contents">addr/data: 4 12
+f05 31 21 302 500 504 503 300
+301 240 380 303 f 501 f06 502
+</a>
     </comp>
   </circuit>
 </project>

@@ -55,7 +55,7 @@ int main() {
     initialize();
     string line = "",label;
     map<string,int> labels;
-    ifstream test ("testcase2.txt");
+    ifstream test ("test1.txt");
 
     while(getline(test,line))
     {
@@ -63,14 +63,14 @@ int main() {
         {
             label = line.substr(0,line.size()-1);
             //cout<<label<<" goto ins "<<ins_cnt<<endl;
-            labels.insert(pair<string,int>(label, ins_cnt));
+            labels.insert(pair<string,int>(label, ins_cnt+1));
         }
         else if(line!="")
         {
             if(line.substr(0,4)=="push"||line.substr(0,3)=="pop")
             {
                 //cout<<line<<endl;
-                if(line[line.size()-1]==')') ins_cnt+=3;
+                if(line[line.size()-1]==')'||line.substr(0,3)=="pop") ins_cnt+=3;
                 else ins_cnt+=2;
             }
             else ins_cnt++;
@@ -83,10 +83,9 @@ int main() {
     line.clear();
 
     test.close();
-    ifstream test1 ("testcase2.txt");
-    ofstream codefile("machine_code2.txt");
-    codefile<<"v2.0 raw"<<endl;
-	codefile<<"777ff"<<endl;
+    ifstream test1 ("test1.txt");
+    ofstream codefile("machine_code.txt");
+    codefile<<"v2.0 raw"<<endl<<"777ff"<<endl;
 
     while( getline(test1 ,line)) {
 
@@ -156,6 +155,8 @@ int main() {
                 ln_cnt++;
 
                 code = opcode[inst[0]]+ makehex(to_string(labels[inst[1]]))+"00";
+                //cout<<labels[inst[1]]<<endl;
+                //cout<<inst[1]<<endl;
                 //cout<<code<<endl;
                 codefile<<code<<endl;
             }
@@ -185,10 +186,7 @@ int main() {
                     string offset = inst[1].substr(0,inst[1].find('('));
                     string reg = inst[1].substr(inst[1].find('(')+1,inst[1].size());
 
-                    //cout<<offset<<" "<<reg<<endl;
-
-                    code = opcode["addi"]+registers["$t5"]+registers[reg]+makehex(offset);
-                    //cout<<code<<endl;
+                    code = opcode["lw"]+registers[reg]+registers["$t5"]+makehex(offset);
                     codefile<<code<<endl;
                     code = opcode["sw"]+registers["$sp"]+registers["$t5"]+makehex("0");
                     //cout<<code<<endl;
@@ -211,12 +209,15 @@ int main() {
 
             else if(inst[0]=="pop")
             {
-                ln_cnt+=2;
+                ln_cnt+=3;
 
-                code = opcode["lw"]+registers["$sp"]+registers[inst[1]]+makehex("0");
-                codefile<<code<<endl;
                 code = opcode["addi"]+registers["$sp"]+registers["$sp"]+ makehex("1");
                 codefile<<code<<endl;
+                code = opcode["lw"]+registers["$sp"]+registers[inst[1]]+makehex("0");
+                codefile<<code<<endl;
+                code = opcode["sw"]+registers["$sp"]+registers["$zero"]+makehex("0");
+                codefile<<code<<endl;
+
             }
 
         }
