@@ -1,0 +1,22 @@
+To implement push and pop, combinations of several MIPS instructions were used. Here each syntax is described with details of the combinations of instructions. 
+1. push $t0
+   
+   sw $t0, 0($sp)
+   subi $sp, $sp, 1
+$sp holds the stack pointer. So, the value in register $to was first stored in top of the stack using address in $sp. Then, $sp was decremented by 1 to let it point to top of the stack.
+
+2. push 3($t0)
+
+   lw $t5, 3($t0)
+   sw $t5, 0($sp)
+   subi $sp, $sp, 1
+Here an extra register $t5 was used to load the data from the data memory that points to the address in $t0 incremented by the offset mentioned(in this case 3). Then the value in $t5 
+was stored in top of the stack using stack pointer in $sp. Then, stack pointer was decremented by 1 to let it point to the current top of the stack. 
+
+3. pop $t0
+
+   addi $sp, $sp, 1
+   lw $t0, 0($sp)
+   sw $zero, 0($sp)
+Firstly, the stack pointer was decreased to let it point to the top of stack that holds the topmost data. That data was stored in the desired register $t0. Finally, 0 was written in data
+memory in place of the data that was just accessed.  
