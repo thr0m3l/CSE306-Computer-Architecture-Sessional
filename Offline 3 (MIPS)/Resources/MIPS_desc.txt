@@ -1,0 +1,18 @@
+The main components in our 8bit MIPS processor are as follows:
+	1. Program counter register PC
+	2. Instruction Memory ROM
+	3. Control Unit ROM
+	4. Register file
+	5. 8bit ALU
+	
+In our processor, the instruction memory ROM holds the machine codes for MIPS instructions and the control unit ROM holds the necessary control bits as defined by the opcodes. The program counter register PC initially holds the address 00. When the program is initiated the first instruction is loaded into the processor which is then splitted into five parts. The first part, opcode goes to the control unit and acts as the address for ROM. Necessary control bits are generated and provided as necessary throughout the whole processor.
+
+In case of memory instructions, i.e. lw, sw, push and pop, the data memory RAM is used to either write the calculated data or read the data to be written into the destination register of the register file.
+
+The register file consists of 8 registers ($zero, $t0, $t1, $t2, $t3, $t4, $t5, $sp) and some necessary decoders and multiplexors to read and write data into the desired register. The register file also takes as input a 8 bit data to be written in the destination register. 
+
+For all the arithmetic and logical operations, the 8bit ALU is used which takes as input either the 8bit data read from the register for R-type instructions or a constant in case of I-type instructions. It performs the necessary operations namely addition, subtraction, logical and, logical or, logical nor, right shift and left shift. The ALU opcode feed into the ALU from control unit determines what type of operation the ALU should perform. The output of the ALU consists of an 8bit data defining the result of ALU operations and an 1bit indicator if the result is zero or not. 
+
+Various multiplexors have been used throughout the processor to select data from two possible sources. 8 bit adders have been used to calculate the address of the next instruction the PC should hold (PC is incremented by 1 in general. In branch instructions, it is incremented by 1+offset and in J-type instructions the provided address in bits in 8-15 acts as the value of PC). The MIPS have been designed to execute each type of instruction in exactly one clock pulse. The processor is manually simulated by an external clock. 
+
+We also used an external assembler (cpp program) to convert the provided MIPS assembly code to machine code.
