@@ -1,0 +1,36 @@
+% Please add the following required packages to your document preamble:
+% \usepackage{booktabs}
+\begin{table}[]
+\begin{tabular}{@{}|c|c|c|c|c|c|c|c|c|c|c|c|c|@{}}
+\toprule
+\textbf{\begin{tabular}[c]{@{}c@{}}Controls/\\ Instructions\end{tabular}} &
+  \textbf{SHIFT} &
+  \textbf{REGDEST} &
+  \textbf{ALUSRC} &
+  \textbf{REGWRITE} &
+  \textbf{MEMREAD} &
+  \textbf{MEMWRITE} &
+  \textbf{BRANCH} &
+  \textbf{BEQONE} &
+  \textbf{JUMP} &
+  \textbf{ALUOp2} &
+  \textbf{ALUOp1} &
+  \textbf{ALUOp0} \\ \midrule
+\textbf{sll}  & 1 & 1 & 1 & 1 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 1 \\ \midrule
+\textbf{bneq} & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 1 & 0 & 0 & 0 & 1 \\ \midrule
+\textbf{beq}  & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 1 \\ \midrule
+\textbf{ori}  & 0 & 0 & 1 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 \\ \midrule
+\textbf{add}  & 0 & 1 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\ \midrule
+\textbf{nor}  & 0 & 1 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 \\ \midrule
+\textbf{and}  & 0 & 1 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 1 \\ \midrule
+\textbf{addi} & 0 & 0 & 1 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\ \midrule
+\textbf{subi} & 0 & 0 & 1 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 \\ \midrule
+\textbf{sw}   & 0 & 0 & 1 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 \\ \midrule
+\textbf{lw}   & 0 & 0 & 1 & 1 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\ \midrule
+\textbf{andi} & 0 & 0 & 1 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 1 \\ \midrule
+\textbf{j}    & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 1 & 1 & 1 \\ \midrule
+\textbf{sub}  & 0 & 1 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 \\ \midrule
+\textbf{srl}  & 1 & 1 & 1 & 1 & 0 & 0 & 0 & 0 & 0 & 1 & 1 & 0 \\ \midrule
+\textbf{or}   & 0 & 1 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 \\ \bottomrule
+\end{tabular}
+\end{table}
