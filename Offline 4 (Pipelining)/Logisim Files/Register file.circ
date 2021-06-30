@@ -136,6 +136,7 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
     <wire from="(800,140)" to="(940,140)"/>
     <wire from="(1050,330)" to="(1070,330)"/>
     <wire from="(800,140)" to="(800,380)"/>
+    <wire from="(750,770)" to="(750,780)"/>
     <wire from="(930,180)" to="(930,250)"/>
     <wire from="(910,160)" to="(910,230)"/>
     <wire from="(1100,230)" to="(1100,580)"/>
@@ -186,6 +187,7 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
     <wire from="(1070,200)" to="(1150,200)"/>
     <wire from="(610,760)" to="(610,800)"/>
     <wire from="(420,760)" to="(420,860)"/>
+    <wire from="(750,770)" to="(770,770)"/>
     <wire from="(720,730)" to="(750,730)"/>
     <wire from="(790,400)" to="(820,400)"/>
     <wire from="(1050,420)" to="(1080,420)"/>
@@ -211,6 +213,7 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
     <wire from="(930,420)" to="(1020,420)"/>
     <wire from="(930,500)" to="(1020,500)"/>
     <wire from="(930,580)" to="(1020,580)"/>
+    <wire from="(720,780)" to="(750,780)"/>
     <wire from="(970,150)" to="(1000,150)"/>
     <wire from="(670,60)" to="(1210,60)"/>
     <wire from="(800,690)" to="(940,690)"/>
@@ -424,6 +427,12 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
     <comp lib="1" loc="(970,540)" name="AND Gate">
       <a name="size" val="30"/>
       <a name="inputs" val="2"/>
+    </comp>
+    <comp lib="0" loc="(720,780)" name="Pin">
+      <a name="tristate" val="false"/>
+      <a name="label" val="Init Reg clock"/>
+      <a name="labelloc" val="south"/>
+      <a name="labelfont" val="SansSerif bold 12"/>
     </comp>
     <comp lib="2" loc="(630,600)" name="Multiplexer">
       <a name="width" val="4"/>
